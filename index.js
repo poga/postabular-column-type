@@ -26,6 +26,6 @@ module.exports = postabular.plugin('column-type', function(tabular, result) {
             }
         })
         let result = _.sortBy(Object.keys(derived[colIdx]).map((t) => { return [t, derived[colIdx][t]] }), (x) => { return -1*x[1] })
-        console.log(result[0])
+        tabular.setMeta(`column_type_${colIdx}`, result[0][0])
     })
 })
